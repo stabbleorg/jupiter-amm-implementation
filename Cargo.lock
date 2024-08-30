@@ -385,9 +385,9 @@ dependencies = [
 
 [[package]]
 name = "anyhow"
-version = "1.0.71"
+version = "1.0.86"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9c7d0618f0e0b7e8ff11427422b64564d5fb0be1940354bfe2e0529b18a9d9b8"
+checksum = "b3d1d046238990b9cf5bcde22a3fb3584ee5cf65fb2765f454ed428c7a0063da"
 
 [[package]]
 name = "ark-bn254"
@@ -638,6 +638,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d468802bab17cbc0cc575e9b053f41e72aa36bfa6b7f55e3529ffa43161b97fa"
 
 [[package]]
+name = "az"
+version = "1.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7b7e4c2464d97fe331d41de9d5db0def0a96f4d823b8b32a2efd503578988973"
+
+[[package]]
 name = "base64"
 version = "0.12.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -735,6 +741,14 @@ name = "block-padding"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8d696c370c750c948ada61c69a0ee2cbbb9c50b1019ddb86d9317157a99c2cae"
+
+[[package]]
+name = "bn"
+version = "0.1.0"
+source = "git+https://github.com/stabbleorg/amm-sdk.git#0c68a24e5658fe3073a83dbe09c1294f739b662a"
+dependencies = [
+ "uint 0.9.5",
+]
 
 [[package]]
 name = "borsh"
@@ -1770,6 +1784,28 @@ dependencies = [
 ]
 
 [[package]]
+name = "fixed"
+version = "1.27.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2fc715d38bea7b5bf487fcd79bcf8c209f0b58014f3018a7a19c2b855f472048"
+dependencies = [
+ "az",
+ "bytemuck",
+ "half",
+ "typenum",
+]
+
+[[package]]
+name = "fixed-exp"
+version = "0.1.0"
+source = "git+https://github.com/stabbleorg/amm-sdk.git#0c68a24e5658fe3073a83dbe09c1294f739b662a"
+dependencies = [
+ "fixed",
+ "num-traits",
+ "typenum",
+]
+
+[[package]]
 name = "flate2"
 version = "1.0.26"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1973,6 +2009,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "half"
+version = "2.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6dd08c532ae367adf81c312a4580bc67f1d0fe8bc9c460520283f4c0ff277888"
+dependencies = [
+ "cfg-if",
+ "crunchy",
+]
+
+[[package]]
 name = "hash32"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2043,6 +2089,12 @@ name = "hermit-abi"
 version = "0.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "443144c8cdadd93ebf52ddb4056d257f5b52c04d3c804e657d19eb73fc33668b"
+
+[[package]]
+name = "hex"
+version = "0.4.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7f24254aa9a54b5c858eaee2f5bccdb46aaf0e486a595ed5fd8f86ba55232a70"
 
 [[package]]
 name = "histogram"
@@ -2348,8 +2400,7 @@ dependencies = [
 [[package]]
 name = "jupiter-amm-interface"
 version = "0.4.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cb9b8af088b8e0e948780766b7f0806422c9dc039a6406a0ed3bad575bfd32dc"
+source = "git+https://github.com/jup-ag/jupiter-amm-interface.git?branch=feat/stabble#fb20d73a3db508a030b37553c817a61fa6e819fe"
 dependencies = [
  "anyhow",
  "borsh 0.10.3",
@@ -2387,6 +2438,9 @@ dependencies = [
  "spl-token 3.5.0",
  "spl-token-2022 0.9.0 (git+https://github.com/solana-labs/solana-program-library.git?rev=79a575fb7af56d26deeda94fef8f55bde7a90df3)",
  "spl-token-swap",
+ "stabble-stable-swap",
+ "stabble-vault",
+ "stabble-weighted-swap",
  "tokio",
 ]
 
@@ -2508,6 +2562,19 @@ checksum = "57d27b317e207b10f69f5e75494119e391a96f48861ae870d1da6edac98ca900"
 dependencies = [
  "cc",
  "libc",
+]
+
+[[package]]
+name = "math"
+version = "0.1.0"
+source = "git+https://github.com/stabbleorg/amm-sdk.git#0c68a24e5658fe3073a83dbe09c1294f739b662a"
+dependencies = [
+ "bn",
+ "fixed",
+ "fixed-exp",
+ "num-traits",
+ "thiserror",
+ "typenum",
 ]
 
 [[package]]
@@ -2754,9 +2821,9 @@ dependencies = [
 
 [[package]]
 name = "num-traits"
-version = "0.2.15"
+version = "0.2.19"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "578ede34cf02f8924ab9447f50c28075b4d3e5b269972345e7e0372b38c6cdcd"
+checksum = "071dfc062690e90b734c0b2273ce72ad0ffa95f0c74596bc250dcfd960262841"
 dependencies = [
  "autocfg",
 ]
@@ -5085,7 +5152,7 @@ dependencies = [
  "num-traits",
  "solana-program",
  "thiserror",
- "uint",
+ "uint 0.8.5",
 ]
 
 [[package]]
@@ -5416,6 +5483,47 @@ dependencies = [
  "spl-discriminator 0.1.0 (git+https://github.com/solana-labs/solana-program-library.git?rev=79a575fb7af56d26deeda94fef8f55bde7a90df3)",
  "spl-pod 0.1.0 (git+https://github.com/solana-labs/solana-program-library.git?rev=79a575fb7af56d26deeda94fef8f55bde7a90df3)",
  "spl-program-error 0.3.0 (git+https://github.com/solana-labs/solana-program-library.git?rev=79a575fb7af56d26deeda94fef8f55bde7a90df3)",
+]
+
+[[package]]
+name = "stabble-stable-swap"
+version = "0.1.0"
+source = "git+https://github.com/stabbleorg/amm-sdk.git#0c68a24e5658fe3073a83dbe09c1294f739b662a"
+dependencies = [
+ "anchor-lang",
+ "anyhow",
+ "bn",
+ "jupiter-amm-interface",
+ "math",
+ "rust_decimal",
+ "spl-associated-token-account 2.2.0",
+ "spl-token 4.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "stabble-vault",
+]
+
+[[package]]
+name = "stabble-vault"
+version = "0.1.0"
+source = "git+https://github.com/stabbleorg/amm-sdk.git#0c68a24e5658fe3073a83dbe09c1294f739b662a"
+dependencies = [
+ "anchor-lang",
+ "solana-program",
+]
+
+[[package]]
+name = "stabble-weighted-swap"
+version = "0.1.0"
+source = "git+https://github.com/stabbleorg/amm-sdk.git#0c68a24e5658fe3073a83dbe09c1294f739b662a"
+dependencies = [
+ "anchor-lang",
+ "anyhow",
+ "bn",
+ "jupiter-amm-interface",
+ "math",
+ "rust_decimal",
+ "spl-associated-token-account 2.2.0",
+ "spl-token 4.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "stabble-vault",
 ]
 
 [[package]]
@@ -5947,9 +6055,9 @@ dependencies = [
 
 [[package]]
 name = "typenum"
-version = "1.16.0"
+version = "1.17.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "497961ef93d974e23eb6f433eb5fe1b7930b659f06d12dec6fc44a8f554c0bba"
+checksum = "42ff0bf0c66b8238c6f3b578df37d0b7848e55df8577b3f74f92a69acceeb825"
 
 [[package]]
 name = "uint"
@@ -5960,6 +6068,18 @@ dependencies = [
  "byteorder",
  "crunchy",
  "rustc-hex",
+ "static_assertions",
+]
+
+[[package]]
+name = "uint"
+version = "0.9.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "76f64bba2c53b04fcab63c01a7d7427eadc821e3bc48c34dc9ba29c501164b52"
+dependencies = [
+ "byteorder",
+ "crunchy",
+ "hex",
  "static_assertions",
 ]
 
