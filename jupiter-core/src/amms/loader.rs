@@ -5,8 +5,8 @@ use jupiter_amm_interface::{Amm, AmmContext, KeyedAccount};
 use solana_sdk::pubkey::Pubkey;
 
 use super::spl_token_swap_amm::{SplTokenSwapAmm, SPL_TOKEN_SWAP_PROGRAMS};
-use stabble_stable_swap::StableSwap;
-use stabble_weighted_swap::WeightedSwap;
+use stabble_stable_swap::amm::StableSwap;
+use stabble_weighted_swap::amm::WeightedSwap;
 
 pub fn amm_factory(
     keyed_account: &KeyedAccount,

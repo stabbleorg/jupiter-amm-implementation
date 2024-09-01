@@ -10,8 +10,8 @@ use jupiter_core::{
 };
 use solana_sdk::pubkey::Pubkey;
 use solana_sdk::{account::Account, pubkey};
-use stabble_stable_swap::StableSwap;
-use stabble_weighted_swap::WeightedSwap;
+use stabble_stable_swap::amm::StableSwap;
+use stabble_weighted_swap::amm::WeightedSwap;
 
 /// Loads AMM from snapshot and tests quoting
 async fn test_quoting_for_amm_key<T: Amm + 'static>(
