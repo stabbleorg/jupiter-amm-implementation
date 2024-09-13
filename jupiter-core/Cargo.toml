@@ -34,6 +34,6 @@ spl-associated-token-account = { workspace = true, features = [
 ] }
 spl-token-2022 = { workspace = true, features = ["no-entrypoint"] }
 
-stabble-weighted-swap = { git = "https://github.com/stabbleorg/amm-sdk.git", features = ["jupiter-amm"] }
-stabble-stable-swap = { git = "https://github.com/stabbleorg/amm-sdk.git", features = ["jupiter-amm"] }
-stabble-vault = { git = "https://github.com/stabbleorg/amm-sdk.git" }
+stabble-weighted-swap = { workspace = true, features = ["jupiter-amm"] }
+stabble-stable-swap = { workspace = true, features = ["jupiter-amm"] }
+stabble-vault = { workspace = true }

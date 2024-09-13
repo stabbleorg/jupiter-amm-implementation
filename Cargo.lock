@@ -745,7 +745,6 @@ checksum = "8d696c370c750c948ada61c69a0ee2cbbb9c50b1019ddb86d9317157a99c2cae"
 [[package]]
 name = "bn"
 version = "0.1.0"
-source = "git+https://github.com/stabbleorg/amm-sdk.git#be385d25652325d365de7e0b75a9d7d32b7bae59"
 dependencies = [
  "uint 0.9.5",
 ]
@@ -1798,7 +1797,6 @@ dependencies = [
 [[package]]
 name = "fixed-exp"
 version = "0.1.0"
-source = "git+https://github.com/stabbleorg/amm-sdk.git#be385d25652325d365de7e0b75a9d7d32b7bae59"
 dependencies = [
  "fixed",
  "num-traits",
@@ -2400,7 +2398,7 @@ dependencies = [
 [[package]]
 name = "jupiter-amm-interface"
 version = "0.4.4"
-source = "git+https://github.com/jup-ag/jupiter-amm-interface.git?branch=feat/stabble#e74a4cfbffdf51b4737fd5897d7ef5794caac8de"
+source = "git+https://github.com/jup-ag/jupiter-amm-interface.git?rev=abfb1abbdf574c5406193a67fae1d34e9d706f46#abfb1abbdf574c5406193a67fae1d34e9d706f46"
 dependencies = [
  "anyhow",
  "borsh 0.10.3",
@@ -2567,7 +2565,6 @@ dependencies = [
 [[package]]
 name = "math"
 version = "0.1.0"
-source = "git+https://github.com/stabbleorg/amm-sdk.git#be385d25652325d365de7e0b75a9d7d32b7bae59"
 dependencies = [
  "bn",
  "fixed",
@@ -5488,7 +5485,6 @@ dependencies = [
 [[package]]
 name = "stabble-stable-swap"
 version = "1.0.0"
-source = "git+https://github.com/stabbleorg/amm-sdk.git#be385d25652325d365de7e0b75a9d7d32b7bae59"
 dependencies = [
  "anchor-lang",
  "anyhow",
@@ -5497,14 +5493,13 @@ dependencies = [
  "math",
  "rust_decimal",
  "spl-associated-token-account 2.2.0",
- "spl-token 4.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "spl-token 3.5.0",
  "stabble-vault",
 ]
 
 [[package]]
 name = "stabble-vault"
 version = "1.0.0"
-source = "git+https://github.com/stabbleorg/amm-sdk.git#be385d25652325d365de7e0b75a9d7d32b7bae59"
 dependencies = [
  "anchor-lang",
  "solana-program",
@@ -5513,7 +5508,6 @@ dependencies = [
 [[package]]
 name = "stabble-weighted-swap"
 version = "1.0.0"
-source = "git+https://github.com/stabbleorg/amm-sdk.git#be385d25652325d365de7e0b75a9d7d32b7bae59"
 dependencies = [
  "anchor-lang",
  "anyhow",
@@ -5522,7 +5516,7 @@ dependencies = [
  "math",
  "rust_decimal",
  "spl-associated-token-account 2.2.0",
- "spl-token 4.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "spl-token 3.5.0",
  "stabble-vault",
 ]
 
