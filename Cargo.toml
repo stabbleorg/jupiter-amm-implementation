@@ -2,6 +2,7 @@
 members = [
     "jupiter-core",
 ]
+resolver = "2"
 
 [workspace.package]
 edition = "2021"
@@ -27,6 +28,6 @@ spl-token-2022 = { git = "https://github.com/solana-labs/solana-program-library.
     "no-entrypoint",
 ] }
 
-stabble-weighted-swap = { path = "../amm-sdk/programs/weighted-swap" }
-stabble-stable-swap = { path = "../amm-sdk/programs/stable-swap" }
-stabble-vault = { path = "../amm-sdk/programs/vault" }
+stabble-weighted-swap = { path = "../amm-sdk/programs/weighted-swap", features = ["jupiter-amm"] }
+stabble-stable-swap = { path = "../amm-sdk/programs/stable-swap", features = ["jupiter-amm"] }
+stabble-vault = { path = "../amm-sdk/programs/vault", features = [] }
